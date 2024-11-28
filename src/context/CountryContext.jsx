@@ -20,7 +20,7 @@ export function CountryContext({ children }) {
     useEffect(() => {
         const fetchCountries = async () => {
             try {
-                const response = await fetch('src/api/data.json')
+                const response = await fetch('/data.json')
                 const data = await response.json()
                 setAllCountries(data)
                 setCountries(data)
@@ -33,7 +33,7 @@ export function CountryContext({ children }) {
     
     async function getCountry(code) {
         try {
-            const response = await fetch('src/api/data.json')
+            const response = await fetch('/data.json')
             const data = await response.json()
             setCountry(data.find(foundCountry => foundCountry.alpha3Code === code))
         } catch (error) {
