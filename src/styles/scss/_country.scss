@@ -1,0 +1,87 @@
+@use 'vars' as vars;
+@use 'mixins' as mixin;
+
+.country-container{
+    max-width: 31em;
+    margin: 0 auto;
+    padding: 4.5em 0;
+
+    @media only screen and (width >= 1440px) {
+        max-width: none;
+        padding: 4.5em 8.5em;
+    }
+
+    &__main{
+        @include mixin.column(1.5em);
+        margin-top: 5em;
+
+        @media only screen and (width >= 1440px) {
+            @include mixin.alignedRow(6em);
+            flex-direction: row;
+        }
+    }
+
+    &__flag{
+        width: 100%;
+        margin-bottom: 2em;
+
+        @media only screen and (width >= 1440px) {
+            width: 45em;
+            margin-bottom: 0;
+        }
+
+        @media only screen and (width >= 1440px) {
+            width: 50em;
+        }
+    }
+
+    &__country-title{
+        font-size: 1.9em;
+        margin-bottom: 1.5em;
+    }
+
+    &__info{
+        width: 100%;
+    }
+
+    &__details-container{
+        @include mixin.column(4em);
+
+        @media only screen and (width >= 1440px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .details-container__details{
+        @include mixin.column(0.8em);
+
+        .details__title{
+            font-size: 1.2em;
+
+            .bold{
+                font-weight: 600;
+            }
+        }
+    }
+
+    .border-countries{
+        @include mixin.column(1em);
+        margin-top: 4em;
+
+        @media only screen and (width >= 1440px) {
+            width: fit-content;
+
+        }
+
+        &__title{
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .countries-list{
+            @include mixin.alignedRow(0.8em);
+            flex-wrap: wrap;
+        }
+    }
+}

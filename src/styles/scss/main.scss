@@ -1,0 +1,27 @@
+@use 'vars' as vars;
+@use 'mixins' as mixin;
+@use 'header';
+@use 'filters';
+@use 'countryCard';
+@use 'buttonLink';
+@use 'country';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: vars.$fontFamily;
+}
+
+body{
+    font-size: vars.$fontSizeMain;
+    background-color: vars.$veryLightGray;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 800;
+}
+
+a{
+    text-decoration: none;
+}

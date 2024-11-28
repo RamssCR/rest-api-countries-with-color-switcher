@@ -1,0 +1,37 @@
+@use 'vars' as vars;
+@use 'mixins' as mixin;
+
+.main-header{
+    @include mixin.alignedRow();
+    justify-content: space-between;
+    padding: 3.5em 1.5em;
+    background-color: vars.$white;
+    box-shadow: 0 0.4em 0.4em vars.$contrastedGray;
+
+    @media only screen and (width >= 1115px){
+        padding: 3.5em 8.3em;
+    }
+
+    .theme-switcher-container{
+        @include mixin.alignedRow(1.2em);
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .theme-switcher-container .theme-icon{
+        width: 1.5em;
+    }
+
+    .theme-switcher-container .theme-switcher__btn{
+        border: none;
+        background-color: transparent;
+        font-weight: 700;
+        font-size: 1.2em;
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

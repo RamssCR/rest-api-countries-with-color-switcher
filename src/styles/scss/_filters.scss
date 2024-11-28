@@ -1,0 +1,98 @@
+@use 'vars' as vars;
+@use 'mixins' as mixin;
+
+.filters-container{
+    @include mixin.column(3.5em);
+    justify-content: space-between;
+    padding: 0 2em;
+    margin: 3em 0 2.5em 0;
+
+    @media only screen and (width >= 1115px){
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        margin: 3.5em auto;
+        padding: 0 4em;
+        max-width: 100em;
+    }
+
+    @media only screen and (width >= 1440px){
+        max-width: 116em;
+        padding: 0 7.5em;
+    }
+
+    @media only screen and (width >= 1550px){
+        padding: 0 4em;
+    }
+
+    .search-container{
+        @include mixin.alignedRow(1.5em);
+        background-color: vars.$white;
+        padding: 0.6em 2em;
+        border-radius: 0.5em;
+        box-shadow: 0 0 0.5em vars.$contrastedGray;
+
+        @media only screen and (width >= 1115px){
+            max-width: 45em;
+        }
+
+        .search-icon__container{
+            width: 4em;
+            @include mixin.flexCenter();
+
+            img{
+                width: 2em;
+            }
+        }
+
+        .searchBar{
+            font-size: 1.3em;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            padding: 0.8em 0;
+            outline: none;
+            
+            &::placeholder{
+                font-weight: 300;
+                color: #c1c1c1;
+            }
+        }
+    }
+
+    .selector-container{
+        width: 18em;
+        background-color: vars.$white;
+        padding: 0.5em 1.5em 0.5em 0.8em;
+        border-radius: 0.5em;
+        box-shadow: 0 0 0.5em vars.$contrastedGray;
+        
+        @media only screen and (width >= 1115px){
+            width: 20em;
+            margin-left: auto;
+        }
+
+        .country-filter{
+            width: 100%;
+            background-color: transparent;
+            border-color: vars.$white;
+            padding: 1em 1em;
+            outline: none;
+            font-size: 1.2em;
+            font-weight: 500;
+            appearance: none;
+            cursor: pointer;
+
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z" fill="gray"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 1.5em;
+
+            option{
+                background-color: vars.$white;
+                border: none;
+                font-weight: 500;
+                padding: 0.5em 0.8em;
+            }
+        }
+    }
+}

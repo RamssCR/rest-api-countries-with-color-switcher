@@ -1,0 +1,62 @@
+@use 'vars' as vars;
+@use 'mixins' as mixin;
+
+.countries-container{
+    @include mixin.column(4em);
+    align-items: center;
+    margin-bottom: 5em;
+
+    @media only screen and (width >= 1440px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 auto 5em auto;
+        place-items: center;
+        width: fit-content;
+    }
+}
+
+.country-card{
+    width: 26em;
+    box-shadow: 0 0 0.5em vars.$contrastedGray;
+    border-radius: 0.5em;
+    overflow: hidden;
+
+    @media only screen and (width >= 1440px) {
+        width: 20em;
+    }
+
+    @media only screen and (width >= 1550px) {
+        width: 24em;
+    }
+
+    .country-flag-container{
+        height: 16em;
+        background-color: vars.$darkGray;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .country-info{
+        padding: 2em 2em 3em 2em;
+        background-color: vars.$white;
+        color: vars.$veryDarkBlueText;
+
+        .country-name{
+            font-size: 1.6em;
+            margin-bottom: 0.6em;
+        }
+
+        &__details{
+            @include mixin.column(0.5em);
+
+            .item{
+                font-size: 1.15em;
+            }
+
+            .item .bold{
+                font-weight: 600;
+            }
+        }
+    }
+}
